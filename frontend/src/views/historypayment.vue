@@ -21,10 +21,26 @@
                 <input type="submit" name="" value="search">
             </div>
             <div class="boxdetail">
-                <div class="rowdetail">
-                    <label>Số Tài Khoản</label>
-                    <p>19284712940</p>
-                </div>
+                <li class="rowdetail">
+                    <span>Số Tài Khoản:</span>
+                    <span>19284712940</span>
+                </li>
+                <li class="rowdetail">
+                    <span>Số Tài Khoản đã nhận:</span>
+                    <span>19284712940</span>
+                </li>
+                 <li class="rowdetail">
+                    <span>Số tiền gửi:</span>
+                    <span>19284712940</span>
+                </li>
+                <li class="rowdetail">
+                    <span>Hình thức thanh toán:</span>
+                    <span>19284712940</span>
+                </li>
+                <li class="rowdetail">
+                    <span>Thời gian:</span>
+                    <span>19284712940</span>
+                </li>
             </div>
         </div>
     </div>
@@ -42,8 +58,6 @@ export default {
 };
 </script>
 <style lang="css" scoped>
-
-
 .container {
     width: 1280px;
     margin: auto;
@@ -115,17 +129,20 @@ export default {
     float: left;
 
 }
+
 .container .view-component input[type=search] {
     width: 300px;
     height: 30px;
     border-radius: 20px;
     float: left;
-    margin: 5px;    
+    margin: 5px;
 }
-.container .view-component .search{
-    
+
+.container .view-component .search {
+
     height: 45px;
 }
+
 .container .view-component input[type="submit"] {
     border: none;
     border-radius: 20px;
@@ -138,4 +155,30 @@ export default {
     float: left;
     margin: 2px;
 }
+
+.container .view-component .boxdetail {
+     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+     margin:10px;
+     color:#0000ff;
+}
+
+.container .view-component .boxdetail li {
+    display: flex;
+    height: 40px;
+    margin: 5px auto;
+    left: 40%;
+}
+
+.container .view-component .boxdetail .rowdetail span:nth-child(1) {
+    margin: 17px;
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+.container .view-component .boxdetail .rowdetail span:nth-child(2) {
+    margin: 18px;
+    float: left;
+    font-size: 18px;
+}
+
 </style>
