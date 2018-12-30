@@ -8,19 +8,31 @@
                 <li>
                     <router-link to="/transfermoney">Chuyển khoản nội bộ</router-link>
                 </li>
-                <li><router-link to="/Historypayment">Lịch sử giao dịch</router-link></li>
+                <li>
+                    <router-link to="/Historypayment">Lịch sử giao dịch</router-link>
+                </li>
                 <li>Đóng tài khoản thanh toán</li>
                 <li>Thiết lập danh sách người nhận</li>
             </ul>
         </div>
         <div class="view-component">
+            <div class="search">
+                <input type=search results=5 name=s>
+                <input type="submit" name="" value="search">
+            </div>
+            <div class="boxdetail">
+                <div class="rowdetail">
+                    <label>Số Tài Khoản</label>
+                    <p>19284712940</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 <script>
 export default {
 
-    name: 'customer',
+    name: 'historypayment',
 
     data() {
         return {
@@ -30,6 +42,8 @@ export default {
 };
 </script>
 <style lang="css" scoped>
+
+
 .container {
     width: 1280px;
     margin: auto;
@@ -39,6 +53,7 @@ export default {
 .container .panel-link {
     width: 30%;
     float: left;
+
 }
 
 .container .view-cp {
@@ -98,6 +113,29 @@ export default {
 .container .view-component {
     width: 70%;
     float: left;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+
+}
+.container .view-component input[type=search] {
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    float: left;
+    margin: 5px;    
+}
+.container .view-component .search{
+    
+    height: 45px;
+}
+.container .view-component input[type="submit"] {
+    border: none;
+    border-radius: 20px;
+    background: #fb2525;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    float: left;
+    margin: 2px;
 }
 </style>

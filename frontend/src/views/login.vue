@@ -1,4 +1,4 @@
-<template>
+    <template>
     <div class="loginon">
         <div class="loginbox">
             <img src="./../assets/avatar.png" class="avatar">
@@ -109,6 +109,7 @@ input[type="password"] {
     height: 40px;
     color: #fff;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .loginbox input[type="submit"]:hover {
