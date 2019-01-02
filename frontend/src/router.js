@@ -7,6 +7,7 @@ import Customer from './views/customer.vue'
 import Listpayment from './views/list-payment-account.vue'
 import Transfermoney from './views/transfermoney.vue'
 import Historypayment from './views/historypayment.vue'
+import Personnel from './views/personnel.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -55,6 +56,11 @@ export default new Router({
       path:'/historypayment',
       name: 'historypayment',
       component: Historypayment
+    },
+    {
+      path:'/personnel',
+      name: 'personnel',
+      component: Personnel
     }
   ]
 })
