@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div class="wrapper">
+        <!-- <div class="wrapper">
             <header>
                 <nav>
                     <div class="menu-icon">
@@ -18,8 +18,8 @@
                         </ul>
                     </div>
                 </nav>
-            </header><!-- /header -->
-        </div>
+            </header>/header
+        </div> -->
         <div id="nav">
             <router-link to="/">Home</router-link> |
             <router-link to="/about">About</router-link> |
