@@ -25,6 +25,7 @@
             <router-link to="/about">About</router-link> |
             <router-link to="/login">Login</router-link> |
             <router-link to="/customer">Customer</router-link> |
+            <router-link to="/personnel">Personnel</router-link> |
         </div>
         <router-view />
     </div>
