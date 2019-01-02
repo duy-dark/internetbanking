@@ -1,0 +1,48 @@
+#menuPanel {
+	margin-left: 10px;
+    border: 1px solid black;
+    width: 30%;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    height: 500px;
+    background-color: #3C4043;
+    color: white;
+    font-family: 'Droid serif', serif;  
+    text-align: left;
+	padding-top: 20px;
+}
+.btnMenu{
+	overflow: hidden;
+	width:  90%;
+	margin-left: 10px;
+	margin-top: 25px;
+	font-size: 17px;
+	background-color: #F2F2F2;
+	color:black;
+	font-weight: bold;
+	    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius:20px 20px 20px 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    height: 40px;
+    border:1px solid black;
+    border-left:7px solid black;
+    border-right:7px solid black;
+
+}
+.btnMenu:hover{
+	background-color: white;
+	cursor: pointer;
+	padding-top:2px;
+	font-size: 20px;
+	color: #EE5F01;
+	border-left:10px solid #EE5F01;
+	 border-right:10px solid #EE5F01;
+}
+.btnMenu:active{
+	color:white;
+	background-color: black;	
+}
+#workPanel {}
