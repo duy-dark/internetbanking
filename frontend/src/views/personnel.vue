@@ -1,27 +1,26 @@
 <template>
     <div>
         <div id="menuPanel">
-            <div class="btnMenu ">Tạo tài khoản người dùng</div>
-            <div class="btnMenu">Tạo tài khoản thanh toán cho người dùng</div>
-            <div class="btnMenu">Nạp tiền vào tài khoản người dùng</div>
-        </div>
-        <div id="workPanel">
             <div class="btnMenu " @click="clickedBtnCreateAccount">Tạo tài khoản người dùng</div>
             <div class="btnMenu" @click="clickedBtnCreatePaymentAccount">Tạo tài khoản thanh toán cho người dùng</div>
             <div class="btnMenu" @click="clickedBtnRechargePaymentAccount">Nạp tiền vào tài khoản người dùng</div>
         </div>
         <div id="workPanel">
             <CreateAccount v-if="isCreateAccountButtonChoosen" />
+            <CreatePaymentAccount v-if="isCreatePaymentAccountButtonChoosen"/>
+            <RechargePaymentAccount v-if="isRechargePaymentAccountButtonChoosen"/>
         </div>
     </div>
 </template>
 <script>
     import CreateAccount from '../components/personnel/createAccount.vue';
+    import CreatePaymentAccount from '../components/personnel/createPaymentAccount.vue';
+    import RechargePaymentAccount from '../components/personnel/rechargePaymentAccount.vue';
     export default {
 
     name: 'personnel',
     components:{
-    	CreateAccount
+    	CreateAccount,CreatePaymentAccount,RechargePaymentAccount
     },
     data(){
     	return {
