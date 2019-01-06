@@ -30,7 +30,7 @@ router.post('/addtk', (req, res) => {
             if (value1.length === 0) {
                 accountbankRepo.addtk(req.body.USERNAME, SOTK, 0).then(value2 => {
                     res.statusCode = 201;
-                    res.json({ added: true });
+                    res.json({ added: true,num:SOTK });
                 });
             } else {
                 f();
@@ -43,6 +43,7 @@ router.post('/addtk', (req, res) => {
     };
     f();
 })
+
 router.post('/gettk', (req, res) => {
     accountbankRepo.gettk(req.body.USERNAME).then(rows => {
         res.statusCode = 201;

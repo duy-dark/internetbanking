@@ -70,7 +70,7 @@ router.post('/login', (req, res) => {
             var userEntity = rows[0];
             var actoken = tokenRepo.generateAccessToken(userEntity);
             var rftoken = tokenRepo.generateRefreshToken();
-            tokenRepo.updateRefreshToken(userEntity.IDKH, rftoken, 1)
+            tokenRepo.updateRefreshToken(userEntity.USERNAME, rftoken, 1)
                 .then(value => {
                     res.statusCode = 201;
                     res.json({
@@ -93,7 +93,7 @@ router.post('/login', (req, res) => {
                     var userEntity = rows1[0];
                     var actoken = tokenRepo.generateAccessToken(userEntity);
                     var rftoken = tokenRepo.generateRefreshToken();
-                    tokenRepo.updateRefreshToken(userEntity.IDKH, rftoken, 2)
+                    tokenRepo.updateRefreshToken(userEntity.USERNAME, rftoken, 2)
                         .then(value => {
                             res.statusCode = 201;
                             res.json({

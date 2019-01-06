@@ -28,10 +28,19 @@
         <router-view />
     </div>
 </template>
-<script >
-    export default{
+<script>
+export default {
+    data() {
+        return {
+            username: '',
+            name:'',
+        };
+    },
+    methods: {
         
     }
+
+};
 </script>
 <style>
 #app {

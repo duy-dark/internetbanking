@@ -54,7 +54,7 @@ exports.generateRefreshToken = () => {
 exports.updateRefreshToken = (userId, rfToken,userloai) => {
     return new Promise((resolve, reject) => {
 
-        var sql = `delete from userRefreshTokenExt where ID = '${userId}' and LOAI=${userloai}`;
+        var sql = `delete from userRefreshTokenExt where USERNAME = '${userId}' and LOAI=${userloai}`;
         db.save(sql) // delete
             .then(value => {
                 var rdt = moment().format('YYYY-MM-DD HH:mm:ss');
@@ -64,4 +64,13 @@ exports.updateRefreshToken = (userId, rfToken,userloai) => {
             .then(value => resolve(value))
             .catch(err => reject(err));
     });
+}
+exports.initrftoken = (username,refreshtoken, LOAI) => {
+    var sql;
+    if (LOAI === 1) {
+        sql = `select * from khachhang kh,userrefreshtokenext u where u.rfToken='${refreshtoken}' and u.LOAI=1 and u.USERNAME='${username}'`;
+    } else {
+        sql = `select * from nhanvien nv,userrefreshtokenext u where u.rfToken='${refreshtoken}' and u.LOAI=2 and u.USERNAME='${username}'`;
+    }
+    return db.load(sql);
 }

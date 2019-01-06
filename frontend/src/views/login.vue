@@ -3,37 +3,67 @@
         <div class="loginbox">
             <img src="./../assets/avatar.png" class="avatar">
             <h1>Login here</h1>
-            <form accept-charset="utf-8">
+            <form accept-charset="utf-8" v-on:submit.prevent>
                 <p>USERNAME</p>
-                <input type="text" placeholder="enter username">
+                <input type="text" placeholder="enter username" v-model="username">
                 <p>PASSWORD</p>
-                <input type="password" placeholder="enter password">
+                <input type="password" placeholder="enter password" v-model="password">
                 <div class="g-recaptcha" data-sitekey="6LeKOocUAAAAAOKGoQA4zNJHdvVFLvhsIvX2XU_j"></div>
                 <input type="submit" name="" value="LOGIN" @click="login">
-                <a href="">Lost your password</a>
                 <br>
-                <router-link to="/regist">Don't have account?</router-link>
+                <b-notification type="is-danger" v-if="loggedFail"><b><i>Tên đăng nhập hoặc mật khẩu không đúng !</i></b>
+                </b-notification>
+                <router-link to="/regist">Register</router-link>
             </form>
         </div>
     </div>
 </template>
 <script>
-import { mapActions } from 'vuex';
 export default {
 
     name: 'login',
 
     data() {
         return {
-            user: 'duy123'
+            username: '',
+            password: '',
+            loggedFail: false
         };
     },
     methods: {
         login() {
-            if (grecaptcha.getResponse().length !== 0) {
-                alert('checked');
-            }else{
-                alert('not check');
+            this.loggedFail = false;
+            if (grecaptcha.getResponse().length === 0) {
+                var ttdn = {
+                    USERNAME: this.username,
+                    PASSWORD: this.password
+                }
+                this.$store.dispatch('login', ttdn);
+                var self = this;
+                var fn = function() {
+                    if (self.$store.state.isLogged === null) {
+                        setTimeout(fn, 200);
+                    } else {
+
+                        if (self.$store.state.isLogged === true) {
+                            if (self.$store.state.ttcn.CHUCVU !== undefined) {
+                                self.$router.push({ 'path': '/personnel' });
+                            } else {
+                                self.$router.push({ 'path': '/customer' });
+                            }
+
+                        } else {
+                            self.isLogging = false;
+                            self.loggedFail = true;
+                        }
+                    }
+                };
+                fn();
+
+
+
+            } else {
+                alert('Please check recaptchar !');
             }
         }
     }

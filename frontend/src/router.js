@@ -9,8 +9,7 @@ import Transfermoney from './views/transfermoney.vue'
 import Historypayment from './views/historypayment.vue'
 import Personnel from './views/personnel.vue'
 Vue.use(Router)
-
-export default new Router({
+var router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
@@ -46,30 +45,6 @@ export default new Router({
             }
         },
         {
-            path: '/listpayment',
-            name: 'listpayment',
-            component: Listpayment,
-            meta: {
-                requiresAuth: true
-            }
-        },
-        {
-            path: '/transfermoney',
-            name: 'transfermoney',
-            component: Transfermoney,
-            meta: {
-                requiresAuth: true
-            }
-        },
-        {
-            path: '/historypayment',
-            name: 'historypayment',
-            component: Historypayment,
-            meta: {
-                requiresAuth: true
-            }
-        },
-        {
             path: '/personnel',
             name: 'personnel',
             component: Personnel,
@@ -79,3 +54,18 @@ export default new Router({
         }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+  var r = to.matched.some(record => record.meta.requiresAuth);
+  if (r === true) {
+    var refeshToken = localStorage.getItem('refeshToken');
+    if ( refeshToken === undefined||refeshToken===null) {
+      next({
+        path: '/login',
+        // query: { redirect: to.fullPath }
+      })
+    } else next();
+  } else next();
+})
+
+export default router;

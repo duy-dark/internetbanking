@@ -6,11 +6,10 @@
         </b-field>
         <button class="button btnSubmit" @click="submit" :disabled="enoughInfo">Create</button>
         <br><br>
-        <b-notification type="is-success"><b><i>Payment account is created :</i></b>
-        	<br>
-		{{paymentAccount}}
+        <b-notification type="is-success" v-if="!(kq===null) "><b><i>Payment account is created :</i></b>
+            <br>
+            {{kq}}
         </b-notification>
-
     </div>
 </template>
 <script>
@@ -18,12 +17,25 @@
 		data(){
 			return{
 				username:'',
-				paymentAccount:'sdas'
+				kq:null
 			}
 		},
 		methods:{
 			submit(){
-				
+				 var self=this;
+                            var user = {
+                                USERNAME: self.username,
+                                token:this.$store.state.accessToken,
+                            };
+                             this.$store.dispatch('createPaymentAccount',user);
+                             var f=function(){
+                                if(self.$store.state.addedPaymenAccount===null){
+                                    setTimeout(f,200);
+                                }else{
+                                    self.kq=self.$store.state.addedPaymenAccount;
+                                }
+                             }
+                             f();
 			}
 		},
 		computed:{

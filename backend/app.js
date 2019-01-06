@@ -5,8 +5,8 @@ var express = require('express'),
 
 var userCtrl=require('./controller/userCtrl');
 var accountbankCtrl=require('./controller/accountbankCtrl');
+var newtokenCtrl=require('./controller/newtokenCtrl');
 var verifyAccessToken = require('./repo/tokenRepo').verifyAccessToken;
-
 
 var app = express();
 
@@ -21,7 +21,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/user',userCtrl);
-app.use('/accountbank',accountbankCtrl);
+app.use('/accountbank',verifyAccessToken,accountbankCtrl);
+app.use('/newtoken',newtokenCtrl);
 
 
 

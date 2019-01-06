@@ -85,7 +85,9 @@
     },
     computed:{
 
-    }
+    },
+     created: function () 
+     { }
 };
 </script>
 <style type="text/css" src="../assets/customer/customer.css"></style>
