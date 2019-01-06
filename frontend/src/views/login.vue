@@ -8,7 +8,7 @@
                 <input type="text" placeholder="enter username">
                 <p>PASSWORD</p>
                 <input type="password" placeholder="enter password">
-                <div class="g-recaptcha" data-sitekey="6LfvCoUUAAAAAJTPJE3sf_Uqs4PY_ORQN8Fgt42o"></div>
+                <div class="g-recaptcha" data-sitekey="6LeKOocUAAAAAOKGoQA4zNJHdvVFLvhsIvX2XU_j"></div>
                 <input type="submit" name="" value="LOGIN" @click="loadAll(user)">
                 <a href="">Lost your password</a>
                 <br>
