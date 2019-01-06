@@ -1,9 +1,12 @@
 <template>
     <div>
         <div id="menuPanel">
-            <div class="btnMenu " @click="clickedBtnCreateAccount">Tạo tài khoản người dùng</div>
-            <div class="btnMenu" @click="clickedBtnCreatePaymentAccount">Tạo tài khoản thanh toán cho người dùng</div>
-            <div class="btnMenu" @click="clickedBtnRechargePaymentAccount">Nạp tiền vào tài khoản người dùng</div>
+            <div class="title" style="text-align:center;background-color:white !important;border: 1px solid black !important;">
+                Menu Panel
+            </div>
+            <div @click="clickedBtnCreateAccount" :class="{'activeMenu':isCreateAccountButtonChoosen,'btnMenu':true}">Tạo tài khoản người dùng</div>
+            <div class="btnMenu" @click="clickedBtnCreatePaymentAccount" :class="{'activeMenu':isCreatePaymentAccountButtonChoosen,'btnMenu':true}">Tạo tài khoản thanh toán cho người dùng</div>
+            <div class="btnMenu" @click="clickedBtnRechargePaymentAccount" :class="{'activeMenu':isRechargePaymentAccountButtonChoosen,'btnMenu':true}">Nạp tiền vào tài khoản người dùng</div>
         </div>
         <div id="workPanel">
             <CreateAccount v-if="isCreateAccountButtonChoosen" />
@@ -24,7 +27,7 @@
     },
     data(){
         return {
-            isCreateAccountButtonChoosen:false,
+            isCreateAccountButtonChoosen:true,
             isCreatePaymentAccountButtonChoosen:false,
             isRechargePaymentAccountButtonChoosen:false
         }
@@ -45,6 +48,9 @@
             this.isCreatePaymentAccountButtonChoosen=false;
             this.isRechargePaymentAccountButtonChoosen=true;
         }
+    },
+    computed:{
+
     }
 };
 </script>
