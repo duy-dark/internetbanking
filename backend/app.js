@@ -3,6 +3,9 @@ var express = require('express'),
     morgan = require('morgan'),
     cors = require('cors');
 
+var userCtrl=require('./controller/userCtrl');
+var accountbankCtrl=require('./controller/accountbankCtrl');
+var verifyAccessToken = require('./repo/tokenRepo').verifyAccessToken;
 
 
 var app = express();
@@ -16,6 +19,10 @@ app.get('/', (req, res) => {
         msg: 'hello from nodejs express api'
     })
 });
+
+app.use('user',userCtrl);
+app.use('accountbank',verifyAccessToken,accountbankCtrl);
+
 
 
 var port = process.env.PORT || 3000;
