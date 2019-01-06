@@ -9,7 +9,7 @@
                 <p>PASSWORD</p>
                 <input type="password" placeholder="enter password">
                 <div class="g-recaptcha" data-sitekey="6LfvCoUUAAAAAJTPJE3sf_Uqs4PY_ORQN8Fgt42o"></div>
-                <input type="submit" name="" value="LOGIN">
+                <input type="submit" name="" value="LOGIN" @click="loadAll(user)">
                 <a href="">Lost your password</a>
                 <br>
                 <router-link to="/regist">Don't have account?</router-link>
@@ -20,15 +20,21 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
 
     name: 'login',
 
     data() {
         return {
-
+            user:'duy123'
         };
     },
+    methods:{
+         ...mapActions([
+      'loadAll'
+    ])
+    }
 };
 </script>
 <style lang="css" scoped>
