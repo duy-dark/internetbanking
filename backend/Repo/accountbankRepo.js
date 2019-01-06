@@ -97,3 +97,15 @@ exports.updatenn = infor => {
     var sql=`update dsnn set SOTK = '${infor.NEWSOTK}', NAME='${infor.NEWNAME}' where SOTK = '${infor.SOTK}' and USERNAME='${infor.USERNAME}'`;     
     return db.load(sql);
 }
+exports.checktklast = USERNAME => {
+    var sql=`select * from taikhoan where USERNAME='${USERNAME}'`;     
+    return db.load(sql);
+}
+exports.checkmoney = user => {
+    var sql=`select * from taikhoan where USERNAME='${user.USERNAME}' and SOTK='${user.SOTK}'`;     
+    return db.load(sql);
+}
+exports.deletetk = user => {
+    var sql=`DELETE FROM taikhoan WHERE SOTK='${user.SOTK}' and USERNAME='${user.USERNAME}'`;     
+    return db.save(sql);
+}
