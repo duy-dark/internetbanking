@@ -84,6 +84,7 @@ box-shadow: -15px 14px 23px 0px rgba(0,0,0,0.75);
 
 .btnSubmit {
     background-color: #22EE5B !important;
+    margin-right: 15px !important;
 }
 
 .btnSubmit:hover {

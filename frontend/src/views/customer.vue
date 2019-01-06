@@ -88,4 +88,4 @@
     }
 };
 </script>
-<style type="text/css" src="../assets/personnel/personnel.css"></style>
+<style type="text/css" src="../assets/customer/customer.css"></style>
