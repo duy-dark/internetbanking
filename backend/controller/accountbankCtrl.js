@@ -158,4 +158,21 @@ router.post('/getnguoinhan',(req,res)=>{
         res.end('View error log on console');
     })
 })
+router.post('/updatenguoinhan',(req,res)=>{
+    var tt={
+        SOTK:req.body.STK,
+        NEWSOTK:req.body.NEWSTK,
+        NEWNAME:req.body.NEWNAME,
+        USERNAME:req.body.USERNAME
+    }
+    accountbankRepo.updatenn(tt).then(rows=>{
+        res.statusCode=201;
+        res.json({updatenn:true});
+    }).catch(err1 => {
+        res.statusCode = 500;
+        console.log(err1);
+        res.end('View error log on console');
+    })
+})
+
 module.exports = router;
