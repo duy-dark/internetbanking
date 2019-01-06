@@ -159,7 +159,10 @@ export default {
 .container .view-component .boxdetail {
      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
      margin:10px;
-     color:#0000ff;
+     -webkit-column-rule: #00f;
+     -moz-column-rule: #00f;
+     -o-column-rule: #00f;
+     column-rule: #00f;
 }
 
 .container .view-component .boxdetail li {
