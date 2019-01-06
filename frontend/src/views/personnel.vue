@@ -7,8 +7,8 @@
         </div>
         <div id="workPanel">
             <CreateAccount v-if="isCreateAccountButtonChoosen" />
-            <CreatePaymentAccount v-if="isCreatePaymentAccountButtonChoosen"/>
-            <RechargePaymentAccount v-if="isRechargePaymentAccountButtonChoosen"/>
+            <CreatePaymentAccount v-if="isCreatePaymentAccountButtonChoosen" />
+            <RechargePaymentAccount v-if="isRechargePaymentAccountButtonChoosen" />
         </div>
     </div>
 </template>
@@ -20,31 +20,31 @@
 
     name: 'personnel',
     components:{
-    	CreateAccount,CreatePaymentAccount,RechargePaymentAccount
+        CreateAccount,CreatePaymentAccount,RechargePaymentAccount
     },
     data(){
-    	return {
-	    	isCreateAccountButtonChoosen:false,
-	    	isCreatePaymentAccountButtonChoosen:false,
-	    	isRechargePaymentAccountButtonChoosen:false
-    	}
+        return {
+            isCreateAccountButtonChoosen:false,
+            isCreatePaymentAccountButtonChoosen:false,
+            isRechargePaymentAccountButtonChoosen:false
+        }
     },
     methods:{
-    	clickedBtnCreateAccount(){
-	    	this.isCreateAccountButtonChoosen=true;
-			this.isCreatePaymentAccountButtonChoosen=false;
-			this.isRechargePaymentAccountButtonChoosen=false;
-    	},
-    	clickedBtnCreatePaymentAccount(){
-	    	this.isCreateAccountButtonChoosen=false;
-			this.isCreatePaymentAccountButtonChoosen=true;
-			this.isRechargePaymentAccountButtonChoosen=false;
-    	},
-    	clickedBtnRechargePaymentAccount(){
-	    	this.isCreateAccountButtonChoosen=false;
-			this.isCreatePaymentAccountButtonChoosen=false;
-			this.isRechargePaymentAccountButtonChoosen=true;
-    	}
+        clickedBtnCreateAccount(){
+            this.isCreateAccountButtonChoosen=true;
+            this.isCreatePaymentAccountButtonChoosen=false;
+            this.isRechargePaymentAccountButtonChoosen=false;
+        },
+        clickedBtnCreatePaymentAccount(){
+            this.isCreateAccountButtonChoosen=false;
+            this.isCreatePaymentAccountButtonChoosen=true;
+            this.isRechargePaymentAccountButtonChoosen=false;
+        },
+        clickedBtnRechargePaymentAccount(){
+            this.isCreateAccountButtonChoosen=false;
+            this.isCreatePaymentAccountButtonChoosen=false;
+            this.isRechargePaymentAccountButtonChoosen=true;
+        }
     }
 };
 </script>
