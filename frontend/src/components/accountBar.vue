@@ -1,7 +1,8 @@
 <template>
     <div class="navbar-menu">
         <div class="navbar-end">
-            Dũng
+            {{name}}
+            <button class="button btnSubmit" @click="submit">Đăng xuất</button>
         </div>
     </div>
 </template>
@@ -12,7 +13,12 @@ export default {
 
     data() {
         return {
-
+            name: 'Nguyễn Tiến Dũng'
+        }
+    },
+    methods: {
+        submit() {
+            this.name='Cò đẹp trai'
         }
     }
 }

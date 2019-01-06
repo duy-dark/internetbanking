@@ -1,4 +1,4 @@
-    <template>
+<template>
     <div class="loginon">
         <div class="loginbox">
             <img src="./../assets/avatar.png" class="avatar">
@@ -9,16 +9,14 @@
                 <p>PASSWORD</p>
                 <input type="password" placeholder="enter password">
                 <div class="g-recaptcha" data-sitekey="6LeKOocUAAAAAOKGoQA4zNJHdvVFLvhsIvX2XU_j"></div>
-                <input type="submit" name="" value="LOGIN" @click="loadAll(user)">
+                <input type="submit" name="" value="LOGIN" @click="login">
                 <a href="">Lost your password</a>
                 <br>
                 <router-link to="/regist">Don't have account?</router-link>
             </form>
         </div>
     </div>
-    
 </template>
-
 <script>
 import { mapActions } from 'vuex';
 export default {
@@ -27,13 +25,17 @@ export default {
 
     data() {
         return {
-            user:'duy123'
+            user: 'duy123'
         };
     },
-    methods:{
-         ...mapActions([
-      'loadAll'
-    ])
+    methods: {
+        login() {
+            if (grecaptcha.getResponse().length !== 0) {
+                alert('checked');
+            }else{
+                alert('not check');
+            }
+        }
     }
 };
 </script>
@@ -84,12 +86,14 @@ export default {
     font-weight: bold;
 
 }
-.g-recaptcha{
-	height: 90px;
-	padding: 5px;
-	width: 300px;
-	margin: 0;
+
+.g-recaptcha {
+    height: 90px;
+    padding: 5px;
+    width: 300px;
+    margin: 0;
 }
+
 .loginbox input {
     width: 100%;
     margin-bottom: 20px;
