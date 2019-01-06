@@ -13,7 +13,8 @@
 	export default {
 		data(){
 			return{
-				money:0
+				username:'',
+				paymentAccount:''
 			}
 		}
 	};
