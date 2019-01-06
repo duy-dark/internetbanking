@@ -20,8 +20,8 @@ app.get('/', (req, res) => {
     })
 });
 
-app.use('user',userCtrl);
-app.use('accountbank',verifyAccessToken,accountbankCtrl);
+app.use('/user',userCtrl);
+app.use('/accountbank',accountbankCtrl);
 
 
 
