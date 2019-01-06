@@ -1,0 +1,96 @@
+#menuPanel {
+    float: left;
+    margin-left: 40px;
+    width: 30%;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    height: 500px;
+    background-color: #3C4043;
+    color: white;
+     font-family: "Times New Roman", Times, serif;
+    text-align: left;
+    padding-top: 20px;
+        opacity: 0.9;
+-webkit-box-shadow: -15px 14px 23px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -15px 14px 23px 0px rgba(0,0,0,0.75);
+box-shadow: -15px 14px 23px 0px rgba(0,0,0,0.75);
+}
+
+.btnMenu {
+    overflow: hidden;
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 25px;
+    font-size: 17px;
+    background-color: #F2F2F2;
+    color: black;
+    font-weight: bold;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    height: 40px;
+    border: 1px solid black;
+    border-left: 7px solid black;
+    border-right: 7px solid black;
+
+}
+
+.btnMenu:hover {
+    background-color: white;
+    cursor: pointer;
+    padding-top: 2px;
+    font-size: 20px;
+    color: green;
+    border-left: 10px solid green;
+    border-right: 10px solid green;
+}
+.activeMenu{
+    background-color: white;
+    cursor: pointer;
+    padding-top: 2px;
+    font-size: 20px;
+    color: green;
+    border-left: 10px solid green;
+    border-right: 10px solid green;
+}
+.btnMenu:active {
+    color: white;
+    background-color: black;
+}
+
+#workPanel {
+    float: right;
+    font-family: "Times New Roman", Times, serif;
+    width: 60%;
+    height: 500px;
+    margin-right: 30px;
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+     text-align: left;
+    padding: 20px 50px;
+    overflow: auto;
+
+    -webkit-box-shadow: -15px 14px 23px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -15px 14px 23px 0px rgba(0,0,0,0.75);
+box-shadow: -15px 14px 23px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.btnSubmit {
+    background-color: #22EE5B !important;
+}
+
+.btnSubmit:hover {
+    background-color: #11772D  !important;
+}
+.title{
+    color:green !important;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
