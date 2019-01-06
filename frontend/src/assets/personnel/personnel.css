@@ -9,7 +9,7 @@
     height: 500px;
     background-color: #3C4043;
     color: white;
-    font-family: 'Droid serif', serif;
+     font-family: "Times New Roman", Times, serif;
     text-align: left;
     padding-top: 20px;
 }
@@ -52,6 +52,7 @@
 
 #workPanel {
     float: right;
+    font-family: "Times New Roman", Times, serif;
     width: 60%;
     height: 600px;
     margin-right: 30px;
@@ -59,13 +60,11 @@
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
-}
-
-.createAccount {
-    text-align: left;
+     text-align: left;
     padding: 20px 50px;
-
 }
+
+
 
 .btnSubmit {
     background-color: #22EE5B !important;
