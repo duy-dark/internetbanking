@@ -1,4 +1,4 @@
-var mysql=require('./../fn/mysql-db');
+var db=require('./../fn/mysql-db');
 var sha256 = require('crypto-js/sha256');
 
 exports.addkh = user => {
@@ -9,8 +9,8 @@ exports.addkh = user => {
 }
 exports.addnv = user => {
     var md5_password = sha256(user.PASSWORD);
-    var sql = `insert into nhanvien(NAME, USERNAME, PASSWORD) 
-	values('${user.NAME}','${user.USERNAME}', '${md5_password}' )`;
+    var sql = `insert into nhanvien(NAME, USERNAME, PASSWORD,CHUCVU) 
+	values('${user.NAME}','${user.USERNAME}', '${md5_password}','nv')`;
     return db.save(sql);
 }
 exports.loginkh = user => {
@@ -23,3 +23,9 @@ exports.loginnv = user => {
     var sql = `select * from nhanvien where USERNAME = '${user.USERNAME}' and PASSWORD = '${md5_password}';`
     return db.load(sql);
 }
+
+exports.check = user => {
+    var sql = `select * from khachhang kh,nhanvien nv where kh.USERNAME = '${user.USERNAME}' OR nv.USERNAME='${user.USERNAME}' ;`
+    return db.load(sql);
+}
+
