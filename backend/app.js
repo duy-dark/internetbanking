@@ -10,6 +10,7 @@ var verifyAccessToken = require('./repo/tokenRepo').verifyAccessToken;
 
 var app = express();
 
+
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cors());
